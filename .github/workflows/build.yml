@@ -2,7 +2,7 @@ name: Build Resume PDF
 
 on:
   push:
-    branches:
+    branch:
       - main
   workflow_dispatch:
 
@@ -14,33 +14,42 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install Pandoc and wkhtmltopdf
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y pandoc wkhtmltopdf xvfb
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
-      - name: Convert Markdown to PDF
-        run: |
-          xvfb-run pandoc resume.md \
-            --css style.css \
-            --pdf-engine=wkhtmltopdf \
-            -V margin-top=0 \
-            -V margin-bottom=0 \
-            -V margin-left=0 \
-            -V margin-right=0 \
-            --standalone \
-            -o KumarShushankRanjan_Resume.pdf
+      - name: Install Puppeteer
+        run: npm install puppeteer
 
+      - name: Generate PDF
+        run: |
+          node -e "
+          const puppeteer = require('puppeteer');
+          const path = require('path');
+          (async () => {
+            const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
+            const page = await browser.newPage();
+            await page.goto('file://' + path.resolve('resume.html'), { waitUntil: 'networkidle0' });
+            await page.pdf({
+              path: 'KumarShushankRanjan_Resume.pdf',
+              format: 'A4',
+              printBackground: true,
+              margin: { top: '15mm', bottom: '15mm', left: '18mm', right: '18mm' }
+            });
+            await browser.close();
+          })();
+          "
       - name: Get current date
         id: date
         run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
 
-      - name: Create GitHub Release
+      - name: Create Github release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: resume-${{ steps.date.outputs.date }}
           name: Resume — ${{ steps.date.outputs.date }}
-          body: Auto-generated resume PDF from latest markdown source.
+          body: Auto-generated resume PDF from latest HTML source.
           files: KumarShushankRanjan_Resume.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kumar Shushank Ranjan — Resume</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Kumar Shushank Ranjan</h1>
+    <p class="title">DevOps Engineer</p>
+    <p class="contact">
+      +91-8409807662 &nbsp;|&nbsp;
+      <a href="mailto:shushankranjan07@gmail.com">shushankranjan07@gmail.com</a> &nbsp;|&nbsp;
+      <a href="https://linkedin.com/in/shushank-ranjan">LinkedIn</a> &nbsp;|&nbsp;
+      <a href="https://github.com/Shushankranjan">GitHub</a>
+    </p>
+  </header>
+
+  <!-- SUMMARY -->
+  <section>
+    <h2>Summary</h2>
+    <p>DevOps Engineer with hands-on experience building production-grade infrastructure on AWS using Terraform, Lambda, API Gateway, DynamoDB, and Cognito. Proficient in serverless architecture, Infrastructure as Code, CI/CD pipelines, and automated deployments.</p>
+  </section>
+
+  <!-- SKILLS -->
+  <section>
+    <h2>Skills</h2>
+    <ul>
+      <li><strong>Cloud & Infrastructure:</strong> AWS (EC2, Lambda, API Gateway, DynamoDB, S3, CloudFront, Cognito, IAM)</li>
+      <li><strong>DevOps & Tools:</strong> Docker, Terraform, Kubernetes, Ansible, GitHub Actions, Git, Bash, Linux, SDLC</li>
+      <li><strong>Programming:</strong> Python, Java, SQL</li>
+    </ul>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section>
+    <h2>Experience</h2>
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Cyber Security Intern</span>
+        <span class="entry-date">March 2025 – May 2025</span>
+      </div>
+      <div class="entry-sub">
+        <span class="entry-company">Dataview Analytics (Remote)</span>
+        <span class="entry-tech">Python, SQL, Blockchain, Excel</span>
+      </div>
+      <ul>
+        <li>Analyzed and standardized 100,000+ rows of security and transaction data across multiple regions to support threat monitoring and weekly analytics pipelines.</li>
+        <li>Assisted in evaluating blockchain-based data integrity mechanisms to ensure tamper-proof audit trails for sensitive records across distributed systems.</li>
+        <li>Automated reporting workflows using Excel and SQL, reducing manual reporting effort by 40%.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section>
+    <h2>Projects</h2>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Serverless URL Shortener</span>
+        <span class="entry-date">January 2026</span>
+      </div>
+      <div class="entry-sub">
+        <span class="entry-tech">AWS Lambda, API Gateway, DynamoDB, Cognito, Terraform, Python</span>
+      </div>
+      <ul>
+        <li>Built a production-grade serverless URL shortener on AWS for authenticated link creation and sub-10ms public redirects via HTTP 301.</li>
+        <li>Provisioned 18 AWS resources using Terraform IaC with S3 remote state and DynamoDB locking for fully reproducible, zero-click infrastructure deployments.</li>
+        <li>Secured API endpoints via Cognito JWT auth at the API Gateway layer, blocking unauthenticated requests before Lambda execution to reduce attack surface and cost.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Kubernetes-Native App Platform</span>
+        <span class="entry-date">February 2026</span>
+      </div>
+      <div class="entry-sub">
+        <span class="entry-tech">Docker, Kubernetes, Ansible, Python, EC2, GitHub Actions</span>
+      </div>
+      <ul>
+        <li>Automated 3-node K8s cluster provisioning using Ansible playbooks across EC2 instances, reducing manual setup to a single idempotent playbook run.</li>
+        <li>Built a GitHub Actions CI/CD pipeline using Docker and kubectl for zero-touch rolling deployments on every commit with zero downtime.</li>
+        <li>Configured HPA at 60% CPU threshold using K8s autoscaling and ConfigMaps, achieving min 2 / max 6 replica scaling without manual intervention.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Static Website CI/CD Pipeline</span>
+        <span class="entry-date">March 2026</span>
+      </div>
+      <div class="entry-sub">
+        <span class="entry-tech">S3, CloudFront, CodePipeline, CodeBuild, IAM, Terraform</span>
+      </div>
+      <ul>
+        <li>Built a fully automated AWS CI/CD pipeline deploying a static website globally on every GitHub push with zero manual intervention.</li>
+        <li>Configured CloudFront with Origin Access Control (OAC) to serve a private S3 bucket over HTTPS across 400+ edge locations, eliminating direct S3 exposure.</li>
+        <li>Authored CodePipeline + CodeBuild workflow via GitHub Connections (V2) with buildspec.yml for automated S3 sync on every commit; provisioned all infrastructure using Terraform with remote state and least-privilege IAM.</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section>
+    <h2>Certifications</h2>
+    <ul>
+      <li>Microsoft Certified: Azure Fundamentals (AZ-900) — 2025</li>
+    </ul>
+  </section>
+
+  <!-- EDUCATION -->
+  <section>
+    <h2>Education</h2>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Master of Computer Application</span>
+        <span class="entry-date">2025 – 2027</span>
+      </div>
+      <div class="entry-sub">
+        <span class="entry-company">Kristu Jayanti University</span>
+        <span class="entry-tech">Bengaluru, Karnataka</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Bachelor of Computer Application</span>
+        <span class="entry-date">2022 – 2025</span>
+      </div>
+      <div class="entry-sub">
+        <span class="entry-company">Graphic Era University</span>
+        <span class="entry-tech">Dehradun, Uttarakhand</span>
+      </div>
+    </div>
+
+  </section>
+
+</body>
+</html>
