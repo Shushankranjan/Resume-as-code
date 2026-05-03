@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Code:wght@400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@page {
+  margin: 20mm 18mm;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #1a1a1a;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+h1 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 2px;
+}
+
+h1 + p {
+  font-size: 13px;
+  font-weight: 500;
+  color: #475569;
+  margin-bottom: 8px;
+}
+
+/* contact line */
+h1 + p + p {
+  font-size: 12px;
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+hr {
+  border: none;
+  border-top: 1.5px solid #e2e8f0;
+  margin: 14px 0;
+}
+
+/* ── Section headings ── */
+h2 {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #2563eb;
+  margin-bottom: 8px;
+  padding-bottom: 3px;
+  border-bottom: 1.5px solid #bfdbfe;
+}
+
+/* ── Job / Project titles ── */
+h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 2px;
+}
+
+/* dates / tech stack line */
+h3 + em {
+  font-size: 11.5px;
+  color: #64748b;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* ── Bullet points ── */
+ul {
+  padding-left: 16px;
+  margin-bottom: 10px;
+}
+
+li {
+  margin-bottom: 3px;
+  color: #334155;
+}
+
+/* ── Skills ── */
+ul li strong {
+  color: #0f172a;
+}
+
+/* ── Page break safety ── */
+h2, h3 {
+  page-break-after: avoid;
+}
+
+li, p {
+  page-break-inside: avoid;
+}
